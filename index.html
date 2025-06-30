@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- =================== METADATOS Y ENLACES =================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protección Infantil - Prevención y Ayuda</title>
+    <link rel="icon" type="image/png" href="images/Logo-favicon.png">
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="styles.css?v=1">
+    <link rel="stylesheet" href="members.css?v=1">
+    <link rel="stylesheet" href="Images-slides.css">
+    <link rel="stylesheet" href="idioma-style.css">
+    <link rel="stylesheet" href="download.css">
+    <!-- Fuente Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Estilos en línea para la fuente -->
+    <style>
+      body, h1, h2, h3, h4, h5, h6, p, a, button, input, textarea {
+        font-family: 'Poppins', sans-serif !important;
+      }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZX6VZ3WZSY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZX6VZ3WZSY');
+    </script>
+</head>
+<body>
+
+    <!-- =================== BOTÓN DE EMERGENCIA =================== -->
+    <div class="emergency-button" id="emergencyBtn">
+        <span>🚨 EMERGENCIA</span>
+    </div>
+
+    <!-- =================== ENCABEZADO Y NAVEGACIÓN =================== -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/Logo.png" alt="Logo" class="logo-img">
+                    </a>
+                </div>
+                
+                <!-- Menú de navegación -->
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#sobre">Sobre nosotros</a></li>
+                    <li><a href="#historias">Historias que hablan</a></li>
+                    <li><a href="#tienda">Tienda solidaria</a></li>
+                    <li><a href="#contacto">Contactos</a></li>
+                    <li><a href="#donaciones">Donaciones</a></li>
+                    <li><a href="index.html#recursos">Recursos</a></li>
+                </ul>
+                <!-- Acciones de navegación (carrito, login, idioma, menú móvil) -->
+                <div class="nav-actions">
+                    <!-- Icono de carrito -->
+                    <div class="cart-icon" id="cartIcon">
+                        🛒
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                    <!-- Botón de inicio de sesión -->
+                    <button class="login-btn" id="loginBtn">Iniciar Sesión</button>
+                    <!-- Menú de cuenta (logout) -->
+                    <div id="accountMenu" style="display:none; position:absolute; right:10px; top:60px; background:#fff; border:1px solid #ccc; border-radius:6px; z-index:2001;">
+                        <button id="logoutBtn" style="width:100%; padding:10px; border:none; background:none; cursor:pointer;">Cerrar sesión</button>
+                    </div>
+                    <!-- Menú hamburguesa para móvil -->
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- =================== SECCIÓN HERO (PORTADA) =================== -->
+    <section id="inicio" class="hero" style="background-image: url('images/Fondo1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div class="hero-content">
+            <h1 class="hero-title">Protegiendo a Nuestros Niños</h1>
+            <p class="hero-subtitle">Información, recursos y apoyo para prevenir el abuso infantil y crear entornos seguros para todos los niños.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('recursos')">Obtener Ayuda</button>
+                <button class="btn btn-emergency" onclick="showEmergencyModal()">Línea de Emergencia</button>
+            </div>
+        </div>
+        <!-- Tarjeta flotante de emergencia -->
+        <div class="hero-image">
+            <div class="floating-card">
+                <h3>¿Necesitas ayuda inmediata?</h3>
+                <p>Llama al <strong>911</strong> o <strong>(02) 600-2200</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== GALERÍA DE IMÁGENES =================== -->
+    <section class="visual-education-section">
+        <div class="visual-education-container">
+            <h2 class="visual-education-title">Galeria</h2>
+            <div class="carousel-wrapper" style="position: relative; display: flex; align-items: center;">
+                <!-- Miniaturas de la galería -->
+                <div class="carousel-thumb"><img src="images/ED1.webp" alt="Familia feliz" data-full="images/ED1.jpg"></div>
+                <div class="carousel-thumb"><img src="images/ED2.webp" alt="Niños jugando seguros" data-full="images/ED2.jpg"></div>
+                <div class="carousel-thumb"><img src="images/ED3.webp" alt="Educación infantil" data-full="images/ED3.jpg"></div>
+                <div class="carousel-thumb"><img src="images/ED4.webp" alt="Protección infantil" data-full="images/ED4.jpg"></div>
+                <div class="carousel-thumb"><img src="images/ED5.webp" alt="Apoyo familiar" data-full="images/ED5.jpg"></div>
+                <div class="carousel-thumb"><img src="images/ED6.webp" alt="Niños felices" data-full="images/ED6.jpg"></div>
+                <div class="carousel-thumb"><img src="images/ED8.JPG" alt="Niños felices" data-full="images/ED8.jpg"></div>
+                <div class="carousel-thumb"><img src="images/ED9.JPG" alt="Niños felices" data-full="images/ED9.jpg"></div>
+            </div>
+        </div>
+        <!-- Modal para imagen grande -->
+  <div id="galleryModal" class="gallery-modal">
+    <span class="gallery-arrow gallery-arrow-left" id="galleryPrev">&#10094;</span>
+    <img class="gallery-modal-img" id="galleryModalImg" src="" alt="">
+    <span class="gallery-arrow gallery-arrow-right" id="galleryNext">&#10095;</span>
+    <span class="gallery-close" id="galleryClose">&times;</span>
+</div>
+    </section>
+
+    <!-- =================== SECCIÓN DE HISTORIAS (VIDEOS) =================== -->
+    <section id="historias" class="historias-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Historias que hablan</h2>
+                <p>Testimonios y relatos audiovisuales para crear conciencia y esperanza.</p>
+            </div>
+            <div class="historias-videos" style="display: flex; gap: 24px; flex-wrap: wrap; justify-content: center;">
+                <!-- Videos de testimonios -->
+                <div>
+                    <iframe width="320" height="180" src="https://www.youtube.com/embed/2Vv-BfVoq4g" title="Historia 1" frameborder="0" allowfullscreen></iframe>
+                    <p style="text-align:center;">Historia 1: Un nuevo comienzo</p>
+                </div>
+                <div>
+                    <iframe width="320" height="180" src="https://www.youtube.com/embed/3JZ_D3ELwOQ" title="Historia 2" frameborder="0" allowfullscreen></iframe>
+                    <p style="text-align:center;">Historia 2: Rompiendo el silencio</p>
+                </div>
+                <div>
+                    <iframe width="320" height="180" src="https://www.youtube.com/embed/LsoLEjrDogU" title="Historia 3" frameborder="0" allowfullscreen></iframe>
+                    <p style="text-align:center;">Historia 3: Caminando juntos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== SECCIÓN TIENDA SOLIDARIA =================== -->
+    <section id="tienda" class="store">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tienda Solidaria</h2>
+                <p>Merchandise y materiales educativos. Todos los ingresos apoyan nuestros programas.</p>
+            </div>
+            <div class="store-grid">
+                <!-- Producto 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/saquito-360.jpg" alt="Pines metalicos">
+                    </div>
+                    <div class="product-info">
+                        <h3>Hoodie "Habla con ellos"</h3>
+                        <p>Hoodie con mensaje de concienciación.</p>
+                        <div class="price">$19.99</div>
+                        <a href="tienda.html">
+                            <button class="btn btn-primary add-to-cart" data-name="Hoodie 'Habla con ellos'" data-price="1.99" data-image="images/pin-360.jpg">Agregar al Carrito</button>
+                        </a>
+                    </div>
+                </div>
+                <!-- Producto 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/tomatodo-360.jpg" alt="tomatodo-360">
+                    </div>
+                    <div class="product-info">
+                        <h3>Tomadoto </h3>
+                        <p>Guía ilustrada para enseñar a los niños sobre seguridad personal.</p>
+                        <div class="price">$4.99</div>
+                        <button class="btn btn-primary add-to-cart" data-name="Tomadoto" data-price="4.99" data-image="images/tomatodo-360.jpg">Agregar al Carrito</button>
+                    </div>
+                </div>
+                <!-- Producto 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/pin-360.jpg" alt="Pin Metalico 'Habla con ellos'">
+                    </div>
+                    <div class="product-info">
+                        <h3>Pin Metalico "Habla con ellos"</h3>
+                        <p>Conjunto de materiales y guías para la educación preventiva.</p>
+                        <div class="price">$2.99</div>
+                        <button class="btn btn-primary add-to-cart" data-name="Pin Metalico 'Habla con ellos'" data-price="14.99" data-image="images/saquito-360.jpg">Agregar al Carrito</button>
+                    </div>
+                </div>
+                <!-- Producto 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/totebag-360.jpg" alt="Tote bag solidario">
+                    </div>
+                    <div class="product-info">
+                        <h3>Totebag "Habla con ellos"</h3>
+                        <p>Taza de cerámica con diseño inspirador.</p>
+                        <div class="price">$9.99</div>
+                        <button class="btn btn-primary add-to-cart" data-name="Taza 'Juntos Protegemos'" data-price="12.00" data-image="https://images.pexels.com/photos/8500999/pexels-photo-8500999.jpeg?auto=compress&cs=tinysrgb&w=400">Agregar al Carrito</button>
+                    </div>
+                </div>
+                <!-- Producto 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/gorra-360.jpg" alt="Gorra solidaria">
+                    </div>
+                    <div class="product-info">
+                        <h3>Gorra "Habla con ellos"</h3>
+                        <p>Gorra con tela de camello, con diseño inspirador.</p>
+                        <div class="price">$9.99</div>
+                        <a href="tienda2.html">
+                            <button class="btn btn-primary add-to-cart" data-name="Gorra 'Habla con ellos'" data-price="12.00" data-image="images/gorra-360.jpg">Agregar al Carrito</button>
+                        </a>
+                    </div>
+                </div>
+                <!-- Producto 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/toalla-360.jpg" alt="Toalla solidaria">
+                    </div>
+                    <div class="product-info">
+                        <h3>Toalla "Habla con ellos"</h3>
+                        <p>Toalla de microfibra con diseño inspirador.</p>
+                        <div class="price">$9.99</div>
+                        <button class="btn btn-primary add-to-cart" data-name="Toalla Habla con ellos" data-price="12.00" data-image="https://images.pexels.com/photos/8500999/pexels-photo-8500999.jpeg?auto=compress&cs=tinysrgb&w=400">Agregar al Carrito</button>
+                    </div>  
+                </div>
+                <!-- Producto 7 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/taza-360.jpg" alt="Tote bag solidario">
+                    </div>
+                    <div class="product-info">
+                        <h3>Taza "Habla con ellos"</h3>
+                        <p>Taza de cerámica con diseño inspirador.</p>
+                        <div class="price">$9.99</div>
+                        <button class="btn btn-primary add-to-cart" data-name="Taza 'Juntos Protegemos'" data-price="9.99" data-image="taza-360">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== SECCIÓN DE DONACIONES =================== -->
+    <section id="donaciones" class="donaciones-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Donaciones</h2>
+                <p>Tu apoyo es fundamental para proteger a la infancia. ¡Cada aporte cuenta!</p>
+            </div>
+            <!-- Formulario de donaciones -->
+            <form class="donaciones-form" id="donacionesForm">
+                <div class="form-group">
+                    <label for="donadorNombre">Nombre completo</label>
+                    <input type="text" id="donadorNombre" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="donadorEmail">Correo electrónico</label>
+                    <input type="email" id="donadorEmail" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="donacionMonto">Monto a donar (USD)</label>
+                    <input type="number" id="donacionMonto" placeholder="Ej: 20" min="1" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Donar Ahora</button>
+            </form>
+            <!-- Mensaje de agradecimiento -->
+            <div id="donacionGracias" style="display:none; margin-top:20px; color: #1C3F81; font-weight:600;">
+                ¡Gracias por tu generosidad! Tu donación ayuda a proteger a más niños.
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== SECCIÓN DE CONTACTO =================== -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contacto</h2>
+                <p>¿Tienes preguntas? Estamos aquí para ayudarte.</p>
+            </div>
+            <div class="contact-grid">
+                <!-- Información de contacto -->
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📧 Email</h3>
+                        <p>info@protegerinfancia.org</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📍 Dirección</h3>
+                        <p>Av. Protección Infantil 123<br>Ciudad, País</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>🕒 Horarios</h3>
+                        <p>Lunes a Viernes: 9:00 - 18:00<br>Emergencias: 24/7</p>
+                    </div>
+                </div>
+                <!-- Formulario de contacto -->
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" placeholder="Mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== SECCIÓN DE RECURSOS Y AYUDA =================== -->
+    <section id="recursos" class="resources">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recursos y Ayuda</h2>
+                <p>Líneas de ayuda, información y recursos disponibles las 24 horas.</p>
+            </div>
+            <div class="resources-grid">
+                <!-- Tarjeta de emergencia -->
+                <div class="resource-card emergency-card">
+                    <h3>🚨 Emergencia</h3>
+                    <p>Situaciones que requieren atención inmediata</p>
+                    <div class="phone-numbers">
+                        <div class="phone">📞 911</div>
+                        <div class="phone">📞 (02) 600-2200</div>
+                    </div>
+                    <button class="btn btn-emergency">Llamar Ahora</button>
+                </div>
+                <!-- Línea de apoyo -->
+                <div class="resource-card">
+                    <h3>💬 Línea de Apoyo</h3>
+                    <p>Orientación y apoyo psicológico</p>
+                    <div class="phone-numbers">
+                        <div class="phone">📞 (02) 600-2200</div>
+                    </div>
+                    <p class="hours">Disponible 24/7</p>
+                    <p class="hours">Ofrece orientación emocional, apoyo inmediato y derivación a servicios especializados para cualquier persona que haya sufrido violencia sexual</p>
+                </div>
+                <!-- Materiales educativos -->
+                <div class="resource-card">
+                    <h3>📚 Materiales Educativos</h3>
+                    <p>Guías para padres y educadores</p>
+                    <!-- Botón de descarga animado -->
+                    <div class="download-btn-container">
+                        <label class="download-label" style="cursor:pointer;">
+                            <input type="checkbox" class="input" id="downloadCheckbox" />
+                            <span class="circle">
+                                <svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 19V5m0 14-4-4m4 4 4-4"></path>
+                                </svg>
+                                <div class="square"></div>
+                            </span>
+                            <p class="title">Descargar</p>
+                            <p class="title">Abierto</p>
+                        </label>
+                    </div>
+                </div>
+                <!-- Grupos de apoyo -->
+                <div class="resource-card">
+                    <h3>👥 Grupos de Apoyo</h3>
+                    <p>Comunidades de apoyo mutuo</p>
+                    <button class="btn btn-secondary">Encontrar Grupos</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== SECCIÓN SOBRE NOSOTROS =================== -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>¿Quienes somos?</h2>
+                <p>Punto Focal es una agencia creativa que combina estrategia y diseño para desarrollar mensajes visuales claros y sensibles. Nos enfocamos en construir comunicaciones coherentes que aborden problemáticas sociales como el abuso infantil, cuidando cada detalle para generar conciencia, informar y movilizar a la comunidad.</p>
+            </div>
+            <div class="about-grid">
+                <!-- Historia -->
+                <div class="about-card">
+                    <div class="card-icon">🛡️</div>
+                    <h3>Historia</h3>
+                    <p>Educación y recursos para identificar y prevenir situaciones de riesgo antes de que ocurran.</p>
+                </div>
+                <!-- Misión -->
+                <div class="about-card">
+                    <div class="card-icon">💬</div>
+                    <h3>Misión</h3>
+                    <p>Promover la conciencia y acción frente al abuso infantil en la ciudad de Ambato, generando un entorno de protección mediante una campaña que conecte emocionalmente con los padres de familia y los oriente en cómo prevenirlo efectivamente.</p>
+                </div>
+                <!-- Visión -->
+                <div class="about-card">
+                    <div class="card-icon">🤝</div>
+                    <h3>Visión</h3>
+                    <p>Ser una campaña referente en el ámbito académico y comunitario, reconocida por su enfoque simbólico, gráfico y experiencial, capaz de generar reflexión y cambios positivos en la mentalidad de los padres de familia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== SECCIÓN DE MIEMBROS DEL EQUIPO =================== -->
+    <section id="equipo" class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestro Equipo</h2>
+                <p>Conoce a las personas detrás de la campaña.</p>
+            </div>
+            <div class="programming-cards-container">
+                <!-- Miembro 1 -->
+                <div class="programming-card">
+                    <div class="card-face card-face1">
+                        <div class="content">
+                            <img src="images/miembro1.png" alt="Nombre de la persona" class="card-photo">
+                            <h3>Juan Moreno</h3>
+                            <p>"El diseño no es solo lo que ves, es cómo te hace sentir. Y queremos que sientas la urgencia de proteger a nuestros niños."</p>
+                        </div>
+                    </div>
+                    <div class="card-face card-face2">
+                        <h2 class="card-number">Director de medios</h2>
+                    </div>
+                </div>
+                <!-- Miembro 2 -->
+                <div class="programming-card">
+                    <div class="card-face card-face1">
+                        <div class="content">
+                            <img src="images/miembro2.jpg" alt="Nombre de la persona" class="card-photo">
+                            <h3>Estefanía Ulloa</h3>
+                            <p>"El diseño no es solo lo que ves, es cómo te hace sentir. Y queremos que sientas la urgencia de proteger a nuestros niños."</p>
+                        </div>
+                    </div>
+                    <div class="card-face card-face2">
+                        <h2 class="card-number">Directora creativa</h2>
+                    </div>
+                </div>
+                <!-- Miembro 3 -->
+                <div class="programming-card">
+                    <div class="card-face card-face1">
+                        <div class="content">
+                            <img src="images/miembro3.png" alt="Nombre de la persona" class="card-photo">
+                            <h3>Mayte Chango</h3>
+                            <p>"El diseño no es solo lo que ves, es cómo te hace sentir. Y queremos que sientas la urgencia de proteger a nuestros niños."</p>
+                        </div>
+                    </div>
+                    <div class="card-face card-face2">
+                        <h2 class="card-number">Directora de cuentas</h2>
+                    </div>
+                </div>
+                <!-- Miembro 4 -->
+                <div class="programming-card">
+                    <div class="card-face card-face1">
+                        <div class="content">
+                            <img src="images/miembro4.png" alt="Nombre de la persona" class="card-photo">
+                            <h3>Lesly Santana</h3>
+                            <p>"Trabajamos cada día para que la protección infantil sea una prioridad en nuestra sociedad."</p>
+                        </div>
+                    </div>
+                    <div class="card-face card-face2">
+                        <h2 class="card-number">Directora de producción</h2>
+                    </div>
+                </div>
+                <!-- Miembro 5 -->
+                <div class="programming-card">
+                    <div class="card-face card-face1">
+                        <div class="content">
+                            <img src="images/miembro5.jpg" alt="Nombre de la persona" class="card-photo">
+                            <h3>Miguel Miranda</h3>
+                            <p>"La creatividad es nuestra herramienta para inspirar cambios positivos en la infancia."</p>
+                        </div>
+                    </div>
+                    <div class="card-face card-face2">
+                        <h2 class="card-number">Director de planificación</h2>
+                    </div>
+                </div>
+                <!-- Miembro 6 -->
+                <div class="programming-card">
+                    <div class="card-face card-face1">
+                        <div class="content">
+                            <img src="images/miembro6.jpg" alt="Nombre de la persona" class="card-photo">
+                            <h3>Kevin Alvarez</h3>
+                            <p>"Cada mensaje cuenta cuando se trata de proteger a los más vulnerables."</p>
+                        </div>
+                    </div>
+                    <div class="card-face card-face2">
+                        <h2 class="card-number">Asistente de planificación</h2>
+                    </div>
+                </div>
+                <!-- Miembro 7 -->
+                <div class="programming-card">
+                    <div class="card-face card-face1">
+                        <div class="content">
+                            <img src="images/miembro7.jpg" alt="Nombre de la persona" class="card-photo">
+                            <h3>Mathias Ruíz</h3>
+                            <p>"La tecnología puede ser un puente para llegar a más familias y proteger a más niños."</p>
+                        </div>
+                    </div>
+                    <div class="card-face card-face2">
+                        <h2 class="card-number">Director de producción</h2>
+                    </div>
+                </div>
+                <!-- Miembro 8 -->
+                <div class="programming-card">
+                    <div class="card-face card-face1">
+                        <div class="content">
+                            <img src="images/miembro8.jpg" alt="Nombre de la persona" class="card-photo">
+                            <h3>Robert Lascano</h3>
+                            <p>"Informar y educar es el primer paso para prevenir el abuso infantil."</p>
+                        </div>
+                    </div>
+                    <div class="card-face card-face2">
+                        <h2 class="card-number">Asistente de planificación</h2>
+                    </div>
+                </div>
+    </section>
+
+    <!-- =================== PIE DE PÁGINA (FOOTER) =================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Mensaje principal -->
+                <div class="footer-section">
+                    <h3>Tu voz, su escudo.</h3>
+                    <p>Trabajando juntos para crear un mundo más seguro para todos los niños.</p>
+                </div>
+                <!-- Enlaces rápidos -->
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#sobre">Información</a></li>
+                        <li><a href="#recursos">Recursos</a></li>
+                        <li><a href="#tienda">Tienda</a></li>
+                    </ul>
+                </div>
+                <!-- Información de emergencia -->
+                <div class="footer-section-emergency">
+                    <h4>Emergencias</h4>
+                    <p>📞 911</p>
+                    <p>📞 (02) 600-2200</p>
+                </div>
+            </div>
+                     <!-- Redes sociales -->
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank" class="social-icon">
+    <img src="images/Iconos/facebook.png" alt="Facebook" class="facebook-icon">
+</a>
+            <a href="https://www.instagram.com" target="_blank" class="social-icon"><img src="images/Iconos/instagram.png" alt="Instagram"></a>
+            <a href="https://wa.me/1234567890" target="_blank" class="social-icon"><img src="images/Iconos/whatsapp.png" alt="WhatsApp"></a>
+            <a href="https://www.tiktok.com" target="_blank" class="social-icon"><img src="images/Iconos/tik-tok.png" alt="TikTok"></a>
+        </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Punto focal. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =================== MODALES (EMERGENCIA, CARRITO, LOGIN, REGISTRO) =================== -->
+
+    <!-- Modal de emergencia -->
+    <div id="emergencyModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🚨 Líneas de Emergencia</h2>
+                <span class="close" onclick="closeEmergencyModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="emergency-numbers">
+                    <div class="emergency-item">
+                        <h3>Emergencia General</h3>
+                        <a href="tel:911" class="emergency-link">📞 911</a>
+                    </div>
+                    <div class="emergency-item">
+                        <h3>Línea de Protección Infantil</h3>
+                        <a href="tel:01-800-123-4567" class="emergency-link">📞 (02) 600-2200</a>
+                    </div>
+                    <div class="emergency-item">
+                        <h3>Apoyo Psicológico 24/7</h3>
+                        <a href="tel:01-800-987-6543" class="emergency-link">📞 (02) 600-2200</a>
+                    </div>
+                </div>
+                <div class="emergency-note">
+                    <p><strong>Importante:</strong> Si estás en peligro inmediato, llama al 911. Si necesitas hablar con alguien sobre una situación preocupante, todas nuestras líneas están disponibles las 24 horas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal del carrito de compras -->
+    <div id="cartModal" class="modal" style="display:none;">
+        <div class="modal-content cart-modal-content">
+            <div class="modal-header">
+                <h2>🛒 Carrito de Compras</h2>
+                <span class="close" onclick="closeCartModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="cartItems" class="cart-items">
+                    <!-- Aquí se muestran los productos del carrito -->
+                </div>
+                <div class="cart-empty" id="cartEmpty">
+                    <p>Tu carrito está vacío</p>
+                    <button class="btn btn-primary" onclick="closeCartModal()">Seguir Comprando</button>
+                </div>
+                <div class="cart-summary" id="cartSummary" style="display: none;">
+                    <div class="cart-total">
+                        <h3>Total: $<span id="cartTotal">0.00</span></h3>
+                    </div>
+                    <div class="cart-actions">
+                        <button class="btn btn-secondary" onclick="closeCartModal()">Seguir Comprando</button>
+                        <button class="btn btn-primary" onclick="proceedToCheckout()">Proceder al Pago</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de inicio de sesión -->
+    <div id="loginModal" class="modal" style="display:none;">
+        <div class="modal-content login-modal-content">
+            <div class="modal-header">
+                <h2>👤 Iniciar Sesión</h2>
+                <span class="close" onclick="closeLoginModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form class="login-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Correo Electrónico</label>
+                        <input type="email" id="loginEmail" placeholder="tu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Contraseña</label>
+                        <input type="password" id="loginPassword" placeholder="Tu contraseña" required>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="rememberMe">
+                            <span class="checkmark"></span>
+                            Recordarme
+                        </label>
+                        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary login-submit">Iniciar Sesión</button>
+                </form>
+                <div class="login-divider">
+                    <span>o</span>
+                </div>
+                <div class="register-section">
+                    <p>¿No tienes cuenta?</p>
+                    <button class="btn btn-secondary" onclick="showRegisterForm()">Crear Cuenta</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de registro -->
+    <div id="registerModal" class="modal" style="display: none;">
+        <div class="modal-content login-modal-content">
+            <div class="modal-header">
+                <h2>📝 Crear Cuenta</h2>
+                <span class="close" onclick="closeRegisterModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form class="register-form" id="registerForm">
+                    <div class="form-group">
+                        <label for="registerUsername">Nombre de usuario</label>
+                        <input type="text" id="registerUsername" placeholder="Tu nombre de usuario" required>
+                    <div class="form-group">
+                        <label for="registerEmail">Correo Electrónico</label>
+                        <input type="email" id="registerEmail" placeholder="tu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerBirthdate">Fecha de nacimiento</label>
+                        <input type="date" id="registerBirthdate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Contraseña</label>
+                        <input type="password" id="registerPassword" placeholder="Tu contraseña" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirmar Contraseña</label>
+                        <input type="password" id="confirmPassword" placeholder="Repite la contraseña" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Registrarse</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================== SCRIPTS =================== -->
+    <script src="script.js?v=1"></script>
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="./auth.js"></script>
+    <script type="module" src="./images-slides.js"></script>
+    <script src="download-animation.js"></script>
+    <script>
+      // Aquí puedes agregar scripts adicionales si es necesario
+      // Manejar el clic en el botón de login cuando no hay usuario logueado
+document.getElementById('loginBtn').addEventListener('click', function() {
+  if (this.textContent === 'Iniciar Sesión') {
+    showLoginModal();
+  }
+});
+
+// Cerrar modales al hacer clic fuera de ellos
+window.addEventListener('click', function(event) {
+  const loginModal = document.getElementById('loginModal');
+  const registerModal = document.getElementById('registerModal');
+  
+  if (event.target === loginModal) {
+    closeLoginModal();
+  }
+  
+  if (event.target === registerModal) {
+    closeRegisterModal();
+  }
+});
+
+// Validación en tiempo real para el formulario de registro
+document.getElementById('confirmPassword').addEventListener('input', function() {
+  const password = document.getElementById('registerPassword').value;
+  const confirmPassword = this.value;
+  
+  if (password !== confirmPassword && confirmPassword.length > 0) {
+    this.style.borderColor = '#ff4444';
+    this.style.backgroundColor = '#ffe6e6';
+  } else {
+    this.style.borderColor = '#ddd';
+    this.style.backgroundColor = '#fff';
+  }
+});
+
+// Validación de edad mínima (opcional)
+document.getElementById('registerBirthdate').addEventListener('change', function() {
+  const birthdate = new Date(this.value);
+  const today = new Date();
+  const age = today.getFullYear() - birthdate.getFullYear();
+  const monthDiff = today.getMonth() - birthdate.getMonth();
+  
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthdate.getDate())) {
+    age--;
+  }
+  
+  if (age < 13) {
+    alert('Debes tener al menos 13 años para registrarte.');
+    this.value = '';
+  }
+});
+
+// Mostrar/ocultar contraseña
+function togglePassword(fieldId) {
+  const field = document.getElementById(fieldId);
+  const type = field.getAttribute('type') === 'password' ? 'text' : 'password';
+  field.setAttribute('type', type);
+}
+    </script>
+</body>
+</html>

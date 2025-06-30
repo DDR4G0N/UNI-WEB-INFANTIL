@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - Web Infantil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="perfil-account.css">
+</head>
+<body>
+     <!-- =================== ENCABEZADO Y NAVEGACIÓN =================== -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/Logo.png" alt="Logo" class="logo-img">
+                    </a>
+                </div>
+                <!-- Menú de navegación -->
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#sobre">Sobre nosotros</a></li>
+                    <li><a href="index.html#historias">Historias que hablan</a></li>
+                    <li><a href="index.html#tienda">Tienda solidaria</a></li>
+                    <li><a href="index.html#contacto">Contactos</a></li>
+                    <li><a href="index.html#donaciones">Donaciones</a></li>
+                    <li><a href="index.html#recursos">Recursos</a></li>
+                </ul>
+                <!-- Acciones de navegación (carrito, login, idioma, menú móvil) -->
+                <div class="nav-actions">
+                    <!-- Menú de cuenta (logout) -->
+                    <div id="accountMenu" style="display:none; position:absolute; right:10px; top:60px; background:#fff; border:1px solid #ccc; border-radius:6px; z-index:2001;">
+                        <button id="logoutBtn" style="width:100%; padding:10px; border:none; background:none; cursor:pointer;">Cerrar sesión</button>
+                    </div>
+                    <!-- Menú hamburguesa para móvil -->
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- =================== CONTENIDO PRINCIPAL DEL PERFIL =================== -->
+    <section class="perfil-section" style="min-height: 70vh; padding: 40px 0;">
+        <div class="perfil-container">
+            <div class="perfil-header">
+                <button class="perfil-back-btn" onclick="goBack()">← Volver</button>
+                <div class="perfil-avatar" id="perfilAvatar">👤</div>
+                <h1 class="perfil-name" id="perfilName">Cargando...</h1>
+                <p class="perfil-email" id="perfilEmail">Cargando...</p>
+            </div>
+
+            <div class="perfil-content">
+                <div id="perfilLoadingSection" class="perfil-loading">
+                    <div class="perfil-spinner"></div>
+                    <p>Cargando información del perfil...</p>
+                </div>
+
+                <div id="perfilProfileContent" style="display: none;">
+                    <div class="perfil-info-section">
+                        <h2 class="perfil-section-title">Información Personal</h2>
+                        <div class="perfil-info-grid">
+                            <div class="perfil-info-card">
+                                <div class="perfil-info-label">Nombre de usuario</div>
+                                <div class="perfil-info-value" id="perfilInfoUsername">-</div>
+                            </div>
+                            <div class="perfil-info-card">
+                                <div class="perfil-info-label">Correo electrónico</div>
+                                <div class="perfil-info-value" id="perfilInfoEmail">-</div>
+                            </div>
+                            <div class="perfil-info-card">
+                                <div class="perfil-info-label">Fecha de nacimiento</div>
+                                <div class="perfil-info-value" id="perfilInfoBirthdate">-</div>
+                            </div>
+                            <div class="perfil-info-card">
+                                <div class="perfil-info-label">Edad</div>
+                                <div class="perfil-info-value" id="perfilInfoAge">-</div>
+                            </div>
+                            <div class="perfil-info-card">
+                                <div class="perfil-info-label">Miembro desde</div>
+                                <div class="perfil-info-value" id="perfilInfoJoinDate">-</div>
+                            </div>
+                            <div class="perfil-info-card">
+                                <div class="perfil-info-label">Última conexión</div>
+                                <div class="perfil-info-value" id="perfilInfoLastLogin">Ahora</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="perfil-info-section">
+                        <h2 class="perfil-section-title">Acciones</h2>
+                        <div class="perfil-actions-section">
+                            <button class="perfil-action-btn perfil-btn-primary" onclick="editProfile()">
+                                ✏️ Editar Perfil
+                            </button>
+                            <button class="perfil-action-btn perfil-btn-secondary" onclick="changePassword()">
+                                🔐 Cambiar Contraseña
+                            </button>
+                            <button class="perfil-action-btn perfil-btn-secondary" onclick="downloadData()">
+                                📥 Descargar Datos
+                            </button>
+                    </div>
+                </div>
+
+                <div id="perfilErrorSection" style="display: none;">
+                    <div class="perfil-error-message">
+                        <h3>❌ Error al cargar el perfil</h3>
+                        <p id="perfilErrorText">No se pudo cargar la información del usuario.</p>
+                        <button class="perfil-action-btn perfil-btn-primary" onclick="retryLoad()" style="margin-top: 15px;">
+                            🔄 Reintentar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- =================== PIE DE PÁGINA (FOOTER) =================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Mensaje principal -->
+                <div class="footer-section">
+                    <h3>Tu voz, su escudo.</h3>
+                    <p>Trabajando juntos para crear un mundo más seguro para todos los niños.</p>
+                </div>
+                <!-- Enlaces rápidos -->
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html#inicio">Inicio</a></li>
+                        <li><a href="index.html#sobre">Información</a></li>
+                        <li><a href="index.html#recursos">Recursos</a></li>
+                        <li><a href="index.html#tienda">Tienda</a></li>
+                    </ul>
+                </div>
+                <!-- Información de emergencia -->
+                <div class="footer-section-emergency">
+                    <h4>Emergencias</h4>
+                    <p>📞 911</p>
+                    <p>📞 01-800-123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Punto focal. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script type="module" src="perfil-account.js"></script>
+    <script src="auth.js"></script>
+    <script src="firebase-config.js"></script>
+</body>
+</html>
