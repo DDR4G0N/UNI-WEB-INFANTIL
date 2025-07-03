@@ -1,3 +1,40 @@
+/* Icono de acción para botones de perfil */
+.icon-action {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 0.3rem;
+    margin-bottom: 0.1rem;
+    margin-left: -0.8rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    padding: 2px;
+}
+
+/* Botón cerrar sesión perfil */
+#logoutBtnPerfil {
+    background: var(--primary-blue);
+    color: white;
+    border: 1.5px solid var(--primary-blue);
+    transition: background 0.2s, color 0.2s;
+    border-radius: 25px;
+    padding: 10px 22px;
+    /* Elimina el margin-left aquí para que el botón no se desplace solo, sino el contenedor */
+}
+#logoutBtnPerfil:hover {
+    background: var(--soft-yellow);
+    color: var(--primary-blue);
+}
+
+/* Contenedor para mover todo el bloque de cerrar sesión */
+.logout-container-perfil {
+    margin-left: -rem;
+    display: flex;
+    align-items: center;
+}
+
 /* Estilos adaptados a tu diseño de página web */
 :root {
     --primary-blue: #1C3F81;
@@ -113,6 +150,37 @@ body {
     position: relative;
     z-index: 5;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    overflow: visible;
+}
+
+.perfil-avatar-change-btn {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--primary-blue);
+    color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    z-index: 10;
+    font-size: 20px;
+    outline: none;
+}
+.perfil-avatar-change-btn:hover,
+.perfil-avatar-change-btn:focus {
+    background: var(--soft-yellow);
+    color: var(--primary-blue);
+    transform: scale(1.08);
+}
+.perfil-avatar input[type="file"] {
+    display: none;
 }
 
 .perfil-name {
@@ -149,7 +217,6 @@ body {
 }
 
 .perfil-section-title::before {
-    content: '🎯';
     font-size: 28px;
 }
 
@@ -254,6 +321,8 @@ body {
     animation: perfil-spin 1s linear infinite;
     margin: 0 auto 20px;
 }
+
+
 
 @keyframes perfil-spin {
     0% { transform: rotate(0deg); }

@@ -1,3 +1,4 @@
+
 /* =========================
    VARIABLES Y RESETEO GLOBAL
    ========================= */
@@ -62,6 +63,19 @@ body {
     box-shadow: 0 0.25rem 1.25rem rgba(255, 92, 92, 0.3); /* 0 4px 20px */
     animation: pulse 2s infinite;
     transition: var(--transition);
+}
+
+/* =========================
+   TEXTO DE ATENCIÓN INMEDIATA REUTILIZABLE
+   ========================= */
+.attention-text {
+    color: var(--light-bg);
+    font-weight: 600;
+    font-size: 1.08rem;
+    letter-spacing: 0.01em;
+    margin-bottom: -2rem;
+    margin-top: 0.5rem;
+    text-align: center;
 }
 .emergency-button:hover {
     transform: scale(1.05);
@@ -187,8 +201,14 @@ body {
     font-weight: 600;
 }
 
+/* Margen personalizado solo para el botón de registro */
+.btn-register-margin {
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
 .login-btn {
-    background: #192E50;
+    background: var(--primary-blue);
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -322,18 +342,18 @@ body {
     box-shadow: 0 0.5rem 1.5625rem rgba(74, 144, 226, 0.3); /* 0 8px 25px */
 }
 
-
-
 .btn-emergency {
     background: var(--emergency-red);
     color: white;
+    margin: 0.5rem 0;
 }
 .btn-emergency:hover {
     background: #e14e4e;
     transform: translateY(-0.125rem);
     box-shadow: 0 0.5rem 1.5625rem rgba(255, 92, 92, 0.3);
 }
-button:focus,
+
+.button:focus,
 .btn:focus {
     box-shadow: 0 0 0 0.125rem var(--primary-blue); /* 2px */
 }
@@ -520,6 +540,7 @@ button:focus,
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1rem;
+    margin-left: 2rem;
 }
 .phone-numbers {
     margin: 1.5rem 0;
@@ -1273,7 +1294,7 @@ modal-content, .modal-body {
     justify-content: center;
     gap: 1rem;
     margin-top: 1rem;
-    margin-right: 2rem;
+    margin-right: 4rem;
 }
 .social-icons a {
     color: var(--primary-blue);

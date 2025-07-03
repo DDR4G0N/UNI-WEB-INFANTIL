@@ -1,5 +1,18 @@
 import { auth, db } from './firebase-config.js';
-import { onAuthStateChanged, updatePassword, deleteUser } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
+import { onAuthStateChanged, updatePassword, deleteUser, signOut } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
+// Cerrar sesión desde el botón de perfil
+document.addEventListener('DOMContentLoaded', function() {
+  var btnLogout = document.getElementById('logoutBtnPerfil');
+  if (btnLogout) {
+    btnLogout.addEventListener('click', function() {
+      signOut(auth).then(() => {
+        window.location.href = 'index.html';
+      }).catch((error) => {
+        alert('Error al cerrar sesión: ' + error.message);
+      });
+    });
+  }
+});
 import { doc, getDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 
 let currentUser = null;
@@ -49,10 +62,22 @@ function displayProfile(user, data) {
     document.getElementById('perfilName').textContent = data.username || user.displayName || 'Usuario';
     document.getElementById('perfilEmail').textContent = user.email;
 
-    // Avatar con inicial del nombre
+    // Avatar: solo actualiza la inicial y el fondo, no el innerHTML
     const avatar = document.getElementById('perfilAvatar');
     const initial = (data.username || user.email).charAt(0).toUpperCase();
-    avatar.textContent = initial;
+    // Actualiza el span de la inicial si existe
+    let span = document.getElementById('avatarInicial');
+    if (!span) {
+        span = document.createElement('span');
+        span.id = 'avatarInicial';
+        span.style.zIndex = '1';
+        span.style.position = 'relative';
+        avatar.prepend(span);
+    }
+    span.textContent = initial;
+    span.style.display = '';
+    // Limpia el fondo si hay uno anterior
+    avatar.style.backgroundImage = '';
 
     // Información detallada
     document.getElementById('perfilInfoUsername').textContent = data.username || 'No especificado';

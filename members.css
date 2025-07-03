@@ -102,28 +102,28 @@
 
 /* Gradientes para cada tarjeta */
 .programming-card:nth-child(1) .card-face.card-face2 {
-    background-image: linear-gradient(40deg, #1C3F81, #1C3F81 0%, #84adff 45%, #1C3F81 100%);
+    background-color: #1C3F81;
 }
 .programming-card:nth-child(2) .card-face.card-face2 {
-    background-image: linear-gradient(40deg, #1C3F81, #1C3F81 0%, #84adff 45%, #1C3F81 100%);
+    background-color: #1C3F81;
 }
 .programming-card:nth-child(3) .card-face.card-face2 {
-    background-image: linear-gradient(40deg, #1C3F81, #1C3F81 0%, #84adff 45%, #1C3F81 100%);
+    background-color: #1C3F81;
 }
 .programming-card:nth-child(4) .card-face.card-face2 {
-    background-image: linear-gradient(40deg, #1C3F81, #1C3F81 0%, #84adff 45%, #1C3F81 100%);
+    background-color: #1C3F81;
 }
 .programming-card:nth-child(5) .card-face.card-face2 {
-    background-image: linear-gradient(40deg, #1C3F81, #1C3F81 0%, #84adff 45%, #1C3F81 100%);
+    background-color: #1C3F81;
 }
 .programming-card:nth-child(6) .card-face.card-face2 {
-    background-image: linear-gradient(40deg, #1C3F81, #1C3F81 0%, #84adff 45%, #1C3F81 100%);
+    background-color: #1C3F81;
 }
 .programming-card:nth-child(7) .card-face.card-face2 {
-    background-image: linear-gradient(40deg, #1C3F81, #1C3F81 0%, #84adff 45%, #1C3F81 100%);
+    background-color: #1C3F81;
 }
 .programming-card:nth-child(8) .card-face.card-face2 {
-    background-image: linear-gradient(40deg, #1C3F81, #1C3F81 0%, #84adff 45%, #1C3F81 100%);
+    background-color: #1C3F81;
 }
 
 

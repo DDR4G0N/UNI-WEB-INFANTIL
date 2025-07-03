@@ -50,7 +50,13 @@
         <div class="perfil-container">
             <div class="perfil-header">
                 <button class="perfil-back-btn" onclick="goBack()">← Volver</button>
-                <div class="perfil-avatar" id="perfilAvatar">👤</div>
+<div class="perfil-avatar" id="perfilAvatar">
+  <span id="avatarInicial" style="z-index:1; position:relative;">J</span>
+  <button class="perfil-avatar-change-btn" title="Cambiar foto de perfil" type="button" style="z-index:2; background: transparent; border: none; position: absolute; bottom: 8px; right: 8px; width: 38px; height: 38px; padding: 0; display: flex; align-items: center; justify-content: center;" onclick="document.getElementById('avatarInput').click()">
+    <img src="images/Iconos/camara-2.png" alt="Cambiar foto" style="width: 30px; height: 24px; pointer-events: none;">
+  </button>
+  <input type="file" id="avatarInput" accept="image/*" onchange="cambiarAvatar(event)" style="z-index:3; display:none;">
+</div>
                 <h1 class="perfil-name" id="perfilName">Cargando...</h1>
                 <p class="perfil-email" id="perfilEmail">Cargando...</p>
             </div>
@@ -63,7 +69,7 @@
 
                 <div id="perfilProfileContent" style="display: none;">
                     <div class="perfil-info-section">
-                        <h2 class="perfil-section-title">Información Personal</h2>
+<h2 class="perfil-section-title"><img src="images/Iconos/info.png" alt="Información" style="width: 36px; height: 28px; vertical-align: middle; margin-right: 0.4rem;">Información Personal</h2>
                         <div class="perfil-info-grid">
                             <div class="perfil-info-card">
                                 <div class="perfil-info-label">Nombre de usuario</div>
@@ -93,18 +99,28 @@
                     </div>
 
                     <div class="perfil-info-section">
-                        <h2 class="perfil-section-title">Acciones</h2>
+                        <h2 class="perfil-section-title">
+                            <img src="images/Iconos/acciones.png" alt="Acciones" style="width: 22px; height: 32px; vertical-align: middle; margin-right: 0.4rem;">
+                            Acciones
+                        </h2>
                         <div class="perfil-actions-section">
                             <button class="perfil-action-btn perfil-btn-primary" onclick="editProfile()">
-                                ✏️ Editar Perfil
+                                <img src="images/Iconos/editar.png" alt="Editar Perfil" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 0.3rem; margin-bottom: 0.1rem;">
+                                 Editar Perfil
                             </button>
                             <button class="perfil-action-btn perfil-btn-secondary" onclick="changePassword()">
-                                🔐 Cambiar Contraseña
+                                <img src="images/Iconos/clave-2.png" alt="Cambiar Contraseña" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 0.3rem; margin-bottom: 0.1rem;">
+                                 Cambiar Contraseña
                             </button>
                             <button class="perfil-action-btn perfil-btn-secondary" onclick="downloadData()">
-                                📥 Descargar Datos
-                            </button>
-                    </div>
+                                <img src="images/Iconos/descargar.png" alt="Descargar Datos" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 0.3rem; margin-bottom: 0.1rem;">
+                                 Descargar Datos
+                            <div style="margin-left: -20px;">
+                                <button class="perfil-action-btn perfil-btn-secondary" id="logoutBtnPerfil">
+                                    <img src="images/Iconos/logout.png" alt="Cerrar sesión" class="icon-action">     
+                                    Cerrar sesión
+                                </button>
+                            </div>
                 </div>
 
                 <div id="perfilErrorSection" style="display: none;">
@@ -133,19 +149,31 @@
                 <div class="footer-section">
                     <h4>Enlaces Rápidos</h4>
                     <ul>
-                        <li><a href="index.html#inicio">Inicio</a></li>
-                        <li><a href="index.html#sobre">Información</a></li>
-                        <li><a href="index.html#recursos">Recursos</a></li>
-                        <li><a href="index.html#tienda">Tienda</a></li>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#sobre">Información</a></li>
+                        <li><a href="#recursos">Recursos</a></li>
+                        <li><a href="#tienda">Tienda</a></li>
                     </ul>
                 </div>
                 <!-- Información de emergencia -->
                 <div class="footer-section-emergency">
                     <h4>Emergencias</h4>
-                    <p>📞 911</p>
-                    <p>📞 01-800-123-4567</p>
+                    <img src="images/Iconos/ECU-911.png" alt="Emergencia" style="height: 48px; vertical-align: middle; margin-left: 1rem; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1rem;">
+                        <img src="images/Iconos/Telefono.png" alt="Teléfono" style="height: 24px; vertical-align: middle; margin-left: -1.5rem;">
+                        <p>(02) 600-2200</p>
+                    </div>
                 </div>
             </div>
+                     <!-- Redes sociales -->
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank" class="social-icon">
+    <img src="images/Iconos/facebook.png" alt="Facebook" class="facebook-icon">
+</a>
+            <a href="https://www.instagram.com" target="_blank" class="social-icon"><img src="images/Iconos/instagram.png" alt="Instagram"></a>
+            <a href="https://wa.me/1234567890" target="_blank" class="social-icon"><img src="images/Iconos/whatsapp.png" alt="WhatsApp"></a>
+            <a href="https://www.tiktok.com" target="_blank" class="social-icon"><img src="images/Iconos/tik-tok.png" alt="TikTok"></a>
+        </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Punto focal. Todos los derechos reservados.</p>
             </div>
@@ -154,5 +182,43 @@
     <script type="module" src="perfil-account.js"></script>
     <script src="auth.js"></script>
     <script src="firebase-config.js"></script>
+    <script>
+    function cambiarAvatar(event) {
+      const input = event.target;
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const avatar = document.getElementById('perfilAvatar');
+          avatar.style.backgroundImage = `url('${e.target.result}')`;
+          avatar.style.backgroundSize = 'cover';
+          avatar.style.backgroundPosition = 'center';
+          // Oculta la inicial si hay imagen
+          const span = document.getElementById('avatarInicial');
+          if (span) span.style.display = 'none';
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    // Cerrar sesión funcional
+    document.addEventListener('DOMContentLoaded', function() {
+      var btnLogout = document.getElementById('logoutBtnPerfil');
+      if (btnLogout) {
+        btnLogout.addEventListener('click', function() {
+          if (window.firebase && firebase.auth) {
+            firebase.auth().signOut().then(function() {
+              window.location.href = 'index.html';
+            }).catch(function(error) {
+              alert('Error al cerrar sesión');
+            });
+          } else {
+            localStorage.clear();
+            sessionStorage.clear();
+            window.location.href = 'index.html';
+          }
+        });
+      }
+    });
+    </script>
 </body>
 </html>

@@ -496,6 +496,14 @@ a:hover {
     font-size: 0.95rem;
 }
 
+.sizes-list button.selected {
+    background: #1C3F81;
+    color: #fff;
+    border: 2px solid #1C3F81;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
 /* =========================
    RESPONSIVE DESIGN
    ========================= */

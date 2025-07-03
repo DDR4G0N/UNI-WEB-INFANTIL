@@ -116,8 +116,11 @@
                 <!-- Información de emergencia -->
                 <div class="footer-section-emergency">
                     <h4>Emergencias</h4>
-                    <p>📞 911</p>
-                    <p>📞 01-800-123-4567</p>
+                    <img src="images/Iconos/ECU-911.png" alt="Emergencia" style="height: 48px; vertical-align: middle; margin-left: 1rem; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1rem;">
+                        <img src="images/Iconos/Telefono.png" alt="Teléfono" style="height: 24px; vertical-align: middle; margin-left: -1.5rem;">
+                        <p>(02) 600-2200</p>
+                    </div>
                 </div>
             </div>
                      <!-- Redes sociales -->
@@ -286,6 +289,15 @@ function showCartNotification(productName) {
         cartMessage.style.display = 'none';
     }, 2000);
 }
+
+// Selección visual de tallas
+document.querySelectorAll('.sizes-list button').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.sizes-list button').forEach(b => b.classList.remove('selected'));
+        this.classList.add('selected');
+    });
+});
+
 </script>
 <script src="script.js"></script>
 </body>
