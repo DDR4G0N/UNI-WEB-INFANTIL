@@ -370,9 +370,11 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('DOMContentLoaded', function() {
   const audio = document.getElementById('bg-music');
   function enableAudio() {
-    audio.muted = false;
-    audio.play();
-    window.removeEventListener('click', enableAudio);
+    if (audio) {
+      audio.muted = false;
+      audio.play();
+      window.removeEventListener('click', enableAudio);
+    }
   }
   window.addEventListener('click', enableAudio);
 });

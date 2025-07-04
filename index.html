@@ -16,10 +16,10 @@
     <link rel="preload" as="image" href="images/Galeria/ED8.webp">
     <link rel="preload" as="image" href="images/Galeria/ED9.webp">
     <!-- Hojas de estilo -->
-    <link rel="stylesheet" href="styles.css?v=1">
+    <link rel="stylesheet" href="styles.min.css">
     <link rel="stylesheet" href="members.css?v=1">
     <link rel="stylesheet" href="Images-slides.css">
-    <link rel="stylesheet" href="idioma-style.css">
+    <!-- <link rel="stylesheet" href="idioma-style.css"> Eliminado porque el archivo no existe o da error de MIME type -->
     <link rel="stylesheet" href="download.css">
     <!-- Fuente Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -114,7 +114,7 @@
     <section class="visual-education-section">
         <div class="visual-education-container">
             <h2 class="visual-education-title">Galeria</h2>
-            <div class="carousel-wrapper" style="position: relative; display: flex; align-items: center;">
+            <div class="carousel-thumbnails" style="position: relative; display: flex; align-items: center;">
                 <!-- Miniaturas de la galería -->
                 <div class="carousel-thumb"><img src="images/Galeria/ED1.webp" alt="Familia feliz" data-full="images/Galeria/ED1.webp"></div>
                 <div class="carousel-thumb"><img src="images/Galeria/ED2.webp" alt="Niños jugando seguros" data-full="images/Galeria/ED2.webp"></div>
@@ -122,6 +122,7 @@
                 <div class="carousel-thumb"><img src="images/Galeria/ED4.webp" alt="Protección infantil" data-full="images/Galeria/ED4.webp"></div>
                 <div class="carousel-thumb"><img src="images/Galeria/ED5.webp" alt="Apoyo familiar" data-full="images/Galeria/ED5.webp"></div>
                 <div class="carousel-thumb"><img src="images/Galeria/ED6.webp" alt="Niños felices" data-full="images/Galeria/ED6.webp"></div>
+                <div class="carousel-thumb"><img src="images/Galeria/ED7.webp" alt="Niños felices" data-full="images/Galeria/ED7.webp"></div>
                 <div class="carousel-thumb"><img src="images/Galeria/ED8.webp" alt="Niños felices" data-full="images/Galeria/ED8.webp"></div>
                 <div class="carousel-thumb"><img src="images/Galeria/ED9.webp" alt="Niños felices" data-full="images/Galeria/ED9.webp"></div>
             </div>
@@ -704,6 +705,7 @@
                     <div class="form-group">
                         <label for="registerUsername">Nombre de usuario</label>
                         <input type="text" id="registerUsername" placeholder="Tu nombre de usuario" required>
+                    </div>
                     <div class="form-group">
                         <label for="registerEmail">Correo Electrónico</label>
                         <input type="email" id="registerEmail" placeholder="tu@email.com" required>
@@ -727,71 +729,10 @@
     </div>
 
     <!-- =================== SCRIPTS =================== -->
-    <script src="script.js?v=1"></script>
-    <script type="module" src="firebase-config.js"></script>
+    <script src="script.min.js?v=1"></script>
+    <script type="module" src="firebase-config.min.js"></script>
     <script type="module" src="./auth.js"></script>
-    <script type="module" src="./images-slides.js"></script>
-    <script src="download-animation.js"></script>
-    <script>
-      // Aquí puedes agregar scripts adicionales si es necesario
-      // Manejar el clic en el botón de login cuando no hay usuario logueado
-document.getElementById('loginBtn').addEventListener('click', function() {
-  if (this.textContent === 'Iniciar Sesión') {
-    showLoginModal();
-  }
-});
-
-// Cerrar modales al hacer clic fuera de ellos
-window.addEventListener('click', function(event) {
-  const loginModal = document.getElementById('loginModal');
-  const registerModal = document.getElementById('registerModal');
-  
-  if (event.target === loginModal) {
-    closeLoginModal();
-  }
-  
-  if (event.target === registerModal) {
-    closeRegisterModal();
-  }
-});
-
-// Validación en tiempo real para el formulario de registro
-document.getElementById('confirmPassword').addEventListener('input', function() {
-  const password = document.getElementById('registerPassword').value;
-  const confirmPassword = this.value;
-  
-  if (password !== confirmPassword && confirmPassword.length > 0) {
-    this.style.borderColor = '#ff4444';
-    this.style.backgroundColor = '#ffe6e6';
-  } else {
-    this.style.borderColor = '#ddd';
-    this.style.backgroundColor = '#fff';
-  }
-});
-
-// Validación de edad mínima (opcional)
-document.getElementById('registerBirthdate').addEventListener('change', function() {
-  const birthdate = new Date(this.value);
-  const today = new Date();
-  const age = today.getFullYear() - birthdate.getFullYear();
-  const monthDiff = today.getMonth() - birthdate.getMonth();
-  
-  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthdate.getDate())) {
-    age--;
-  }
-  
-  if (age < 13) {
-    alert('Debes tener al menos 13 años para registrarte.');
-    this.value = '';
-  }
-});
-
-// Mostrar/ocultar contraseña
-function togglePassword(fieldId) {
-  const field = document.getElementById(fieldId);
-  const type = field.getAttribute('type') === 'password' ? 'text' : 'password';
-  field.setAttribute('type', type);
-}
-    </script>
+    <script type="module" src="./images-slides.min.js"></script>
+    <script src="download-animation.min.js"></script>
 </body>
 </html>
